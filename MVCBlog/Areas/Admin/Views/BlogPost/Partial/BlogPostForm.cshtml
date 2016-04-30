@@ -1,0 +1,26 @@
+﻿@model MVCBlog.Areas.Admin.Models.DTO.BlogPostVM
+        <div class="box-body">
+            <div class="form-group">
+                <label>Başlık</label>
+                @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Başlık" })
+                @Html.ValidationMessageFor(x => x.Title)
+            </div>
+            <div>
+                @Html.LabelFor(x => x.PostImage)
+                <input type="file" multiple name="PostImage" accept="image/gif, image/jpeg, image/png"  />
+            </div>
+            <div class="form-group">
+                <label>Kategori</label>
+                @Html.DropDownList("CategoryID", Model.drpCategories, "Seçiniz", new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>İçerik</label>
+                @Html.TextAreaFor(x => x.Content, new { @class = "ckeditor" })
+                @*<textarea class="ckeditor" name="Content" id="ckeditor"></textarea>*@
+            </div>
+
+        </div><!-- /.box-body -->
+        <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Kayıt</button>
+        </div>
+

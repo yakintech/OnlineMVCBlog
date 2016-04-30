@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+@model List<MVCBlog.Areas.Admin.Models.DTO.CategoryVM>
+<link href="~/Areas/Admin/Content/css/dataTables.bootstrap.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/custom/deleteRecordTable.js"></script>
+      <!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Kategori Listesi
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Tables</a></li>
+        <li class="active">Data tables</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Data Table With Full Features</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Kategori Adı</th>
+                                <th>Açıklama</th>
+                                <th>İşlem</th>
+                                <th>İşlem</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr id="a_@item.ID">
+                                    
+                                    <td>@item.ID</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Description</td>
+                                    <td><a href="/Admin/Category/UpdateCategory/@item.ID">Güncelle</a></td>
+                                    <td ><img src="~/Areas/Admin/Content/img/delete-icon.png" width="30" height="30" style="cursor:pointer" onclick="Delete('/Admin/Category/DeleteCategory/',@item.ID)" /></td>
+                                </tr>
+                            }
+                           
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>ID</th>
+                                <th>Kategori Adı</th>
+                                <th>Açıklama</th>
+                                <th>İşlem</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</section><!-- /.content -->
+
+<script>
+      $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+      });
+</script>
+
+

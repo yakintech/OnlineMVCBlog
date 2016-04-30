@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "AddSiteMenu";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+<style>
+    .error{
+        color:red
+    }
+</style>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/messages_tr.js"></script>
+<section class="content-header">
+    <h1>
+        Site Menü Ekleme İşlemi
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Forms</a></li>
+        <li class="active">General Elements</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-9">
+            @Html.Partial("/Areas/Admin/Views/Shared/Partial/FormMessagesPart.cshtml")
+
+
+            <div class="box box-primary">
+                <div class="box-body">
+                    <form action="/Admin/SiteMenu/AddSiteMenu/" id="frmSiteMenu" method="post">
+
+                        <div class="form-group">
+                            <label>Ad</label>
+                            <input type="text" class="form-control" name="Name" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Url</label>
+                            <input type="text" class="form-control" name="Url" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Css Class</label>
+                            <input type="text" class="form-control" name="cssClass" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Gonder" />
+                        </div>
+                       
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    $("#frmSiteMenu").validate();
+</script>

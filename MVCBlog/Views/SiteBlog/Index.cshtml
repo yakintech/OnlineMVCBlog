@@ -1,0 +1,282 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/SiteLayout.cshtml";
+}
+@model MVCBlog.Models.VM.SiteBlogPostVM
+<section class="main_news_wrapper cc_single_post_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-9 col-xs-12">
+                <!-- ~~~=| Fashion area START |=~~~ -->
+                <div class="cc_single_post">
+                    <div class="bsp_img">
+                        <img src="~/Areas/Admin/Content/Site/images/blogpost/@Model.PostImagePath" alt="blog single post" />
+                    </div>
+                    <div class="sp_details">
+                        <a href="">@Model.Category</a>
+                        <h2>@Model.Title</h2>
+                        <div class="post_meta">
+                            <ul>
+                                <li><a href=""><i class="fa fa-user"></i>By luck Walker</a></li>
+                                <li><a href=""><i class="fa fa-eye"></i>500</a></li>
+                                <li><a href=""><i class="fa fa-comment-o"></i>45</a></li>
+                            </ul>
+                        </div>
+                        <div class="post_text">
+                            @Html.Raw(Model.Content)
+                        </div>
+                        <div class="social_tags">
+                            <div class="social_tags_left">
+                                <p>Tags :</p>
+                                <ul>
+                                    <li><a href="">Photography</a></li>
+                                    <li><a href="">Content</a></li>
+                                    <li><a href="">News</a></li>
+                                </ul>
+                            </div>
+                            <div class="social_tags_right">
+                                <ul>
+                                    <li class="facebook"><a class="fa fa-facebook" href=""></a></li>
+                                    <li class="twitter"><a class="fa fa-twitter" href=""></a></li>
+                                    <li class="google-plus"><a class="fa fa-google-plus" href=""></a></li>
+                                    <li class="linkedin"><a class="fa fa-linkedin" href=""></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sp-next-prev">
+                            <div class="sp-prev">
+                                <a href=""><i class="fa fa-angle-double-left"></i>Previous post</a>
+                            </div>
+                            <div class="sp-next">
+                                <a href="">Previous post<i class="fa fa-angle-double-right"></i></a>
+                                <div class="sp-next-post">
+                                    <a href="">What Do I Need To Make It In <br>Business?</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sp-comments-box">
+                            <h2>Comments</h2>
+                            <div class="single_comment">
+                                <div class="single_comment_pic">
+                                    <img src="/Content/images/comment-pic1.png" alt="" />
+                                </div>
+                                <div class="single_comment_text">
+                                    <div class="sp_title">
+                                        <a href=""><h4>Chris Hemsworth</h4></a>
+                                        <p>10 Min ago</p>
+                                    </div>
+                                    <p>They call him Flipper Flipper faster than lightning. No one you see is smarter than he. They call him Flipper Flipper the faster than lightning. No one you see is smarter than he</p>
+                                    <a href=""><i class="fa fa-reply"></i>Reply</a>
+                                </div>
+                            </div>
+                            <div class="single_comment single_comment_middle">
+                                <div class="single_comment_pic">
+                                    <img src="/Content/images/comment-pic2.png" alt="" />
+                                </div>
+                                <div class="single_comment_text">
+                                    <div class="sp_title">
+                                        <a href=""><h4>Chris Hemsworth</h4></a>
+                                        <p>10 Min ago</p>
+                                    </div>
+                                    <p>They call him Flipper Flipper faster than lightning. No one you see is smarter than he. They call him Flipper Flipper the faster than lightning. No one you see is smarter than he</p>
+                                    <a href=""><i class="fa fa-reply"></i>Reply</a>
+                                </div>
+                            </div>
+                            <div class="single_comment single_comment_last">
+                                <div class="single_comment_pic">
+                                    <img src="/Content/images/comment-pic3.png" alt="" />
+                                </div>
+                                <div class="single_comment_text">
+                                    <div class="sp_title">
+                                        <a href=""><h4>Chris Hemsworth</h4></a>
+                                        <p>10 Min ago</p>
+                                    </div>
+                                    <p>They call him Flipper Flipper faster than lightning. No one you see is smarter than he. They call him Flipper Flipper the faster than lightning. No one you see is smarter than he</p>
+                                    <a href=""><i class="fa fa-reply"></i>Reply</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-form">
+                            <h2>leave your comments</h2>
+                            <div class="comments_form">
+                                @using (Html.BeginForm("AddComment", "SiteBlog", FormMethod.Post))
+                                {
+                                    <div class="inp_name">
+                                        <input type="hidden" name="BlogPostID" value="@Model.BlogPostID" />
+                                        <input id="c_name" type="text" placeholder="Your Name" required name="Name"/>
+                                        <input type="text" placeholder="Your EMail" name="EMail" required />
+                                    </div>
+                                    <textarea cols="30" rows="10" placeholder="Message" name="Content"></textarea>
+                                    <input type="submit" value="Send Message" />
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ~~~=| Fashion area END |=~~~ -->
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="home_sidebar">
+                    <div class="purchase_sidebar">
+                        <div class="purchase_sidebar_img">
+                            <img src="/Content/images/sidebar1.jpg" alt="" />
+                            <div class="purchase_overlay"></div>
+                            <div class="purchase_sidebar_text">
+                                <h2>Hash</h2>
+                                <p>Give your website a re-design it deserves</p>
+                                <div class="purchase_s">
+                                    <a href="">Purchase</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="follow_us_side">
+                        <h2>Follow Us</h2>
+                        <div class="all_single_follow">
+                            <div class="single_follow_us">
+                                <a href="">
+                                    <i class="fa fa-facebook"></i><br>
+                                    5638<br>
+                                    Fans
+                                </a>
+                            </div>
+                            <div class="single_follow_us twit">
+                                <a href="">
+                                    <i class="fa fa-twitter"></i><br>
+                                    5638<br>
+                                    Fans
+                                </a>
+                            </div>
+                            <div class="single_follow_us goopl">
+                                <a href="">
+                                    <i class="fa fa-google-plus"></i><br>
+                                    5638<br>
+                                    Fans
+                                </a>
+                            </div>
+                            <div class="single_follow_us last_one">
+                                <a href="">
+                                    <i class="fa fa-dribbble"></i><br>
+                                    5638<br>
+                                    Fans
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="follow_us_side">
+                        <h2>Latest Post</h2>
+                        <div class="all_news_right">
+                            <div class="fs_news_right">
+                                <div class="single_fs_news_img">
+                                    <img alt="Single News" src="/Content/images/side1.jpg">
+                                </div>
+                                <div class="single_fs_news_right_text">
+                                    <h4><a href="">Thoughts on remaining casually chic</a></h4>
+                                    <p>
+                                        <a href="">Fashion | </a>
+                                        <i class="fa fa-clock-o"></i>
+                                        1 hour ago
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="fs_news_right">
+                                <div class="single_fs_news_img">
+                                    <img alt="Single News" src="/Content/images/side2.jpg">
+                                </div>
+                                <div class="single_fs_news_right_text">
+                                    <h4><a href="">Thoughts on remaining casually chic</a></h4>
+                                    <p>
+                                        <a href="">Fashion | </a>
+                                        <i class="fa fa-clock-o"></i>
+                                        1 hour ago
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="fs_news_right last_right">
+                                <div class="single_fs_news_img">
+                                    <img alt="Single News" src="/Content/images/side3.jpg">
+                                </div>
+                                <div class="single_fs_news_right_text">
+                                    <h4><a href="">Thoughts on remaining casually chic</a></h4>
+                                    <p>
+                                        <a href="">Fashion | </a>
+                                        <i class="fa fa-clock-o"></i>
+                                        1 hour ago
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="fs_news_right last_right">
+                                <div class="single_fs_news_img">
+                                    <img alt="Single News" src="/Content/images/side4.jpg">
+                                </div>
+                                <div class="single_fs_news_right_text">
+                                    <h4><a href="">Thoughts on remaining casually chic</a></h4>
+                                    <p>
+                                        <a href="">Fashion | </a>
+                                        <i class="fa fa-clock-o"></i>
+                                        1 hour ago
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="fs_news_right last_right">
+                                <div class="single_fs_news_img">
+                                    <img alt="Single News" src="/Content/images/side5.jpg">
+                                </div>
+                                <div class="single_fs_news_right_text">
+                                    <h4><a href="">Thoughts on remaining casually chic</a></h4>
+                                    <p>
+                                        <a href="">Fashion | </a>
+                                        <i class="fa fa-clock-o"></i>
+                                        1 hour ago
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="follow_us_side">
+                        <h2>Image Gallery</h2>
+
+
+
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <div class="br_single_news">
+                                        <img alt="" src="/Content/images/side_slider.jpg">
+                                        <div class="br_cam">
+                                            <a class="fa fa-camera" href=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="br_single_news">
+                                        <img alt="" src="/Content/images/side_slider.jpg">
+                                        <div class="br_cam">
+                                            <a class="fa fa-camera" href=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="br_single_news">
+                                        <img alt="" src="/Content/images/side_slider.jpg">
+                                        <div class="br_cam">
+                                            <a class="fa fa-camera" href=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

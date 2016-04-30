@@ -1,0 +1,27 @@
+﻿@model MVCBlog.Areas.Admin.Models.DTO.CategoryVM
+<div class="box box-primary">
+
+    <!-- form start -->
+
+    @using (Html.BeginForm())
+            {
+        <div class="box-body">
+            <div class="form-group">
+                @Html.LabelFor(x => x.Name)
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @placeholder = "Kategori adı" })
+                @Html.ValidationMessageFor(x => x.Name)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Description)
+                @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @placeholder = "Açıklama" })
+            </div>
+
+
+        </div><!-- /.box-body -->
+        <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Kayıt</button>
+        </div>
+    }
+
+</div>
