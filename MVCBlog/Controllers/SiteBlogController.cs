@@ -12,7 +12,7 @@ namespace MVCBlog.Controllers
     public class SiteBlogController : SiteBaseController
     {
   
-        public ActionResult Index(int id)
+        public ActionResult Index(string title, int id)
         {
             BlogPost blogpost = db.BlogPosts.FirstOrDefault(x => x.ID == id);
             SiteBlogPostVM model = new SiteBlogPostVM();
