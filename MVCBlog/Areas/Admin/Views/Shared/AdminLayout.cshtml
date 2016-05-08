@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization;
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -13,11 +15,9 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link href="~/Areas/Admin/Content/css/AdminLTE.css" rel="stylesheet" />
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
+    @Styles.Render("~/bundles/admincss")
 
-    <link href="~/Areas/Admin/Content/css/_all-skins.min.css" rel="stylesheet" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -30,13 +30,9 @@
 
     <script src="~/Scripts/bootstrap.min.js"></script>
     <!-- SlimScroll -->
-    <script src="~/Scripts/jquery.slimscroll.min.js"></script>
-    <!-- FastClick -->
-    <script src="~/Scripts/fastclick.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="~/Scripts/app.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="~/Scripts/demo.js"></script>
+
+    @Scripts.Render("~/bundles/adminjs")
+
     <style>
         .field-validation-error { color:red}
     </style>
